@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">RMA_LV2_ZAD1</string>
     <string name="buttonAddPerson">Add New Person</string>
+    <string name="tv_newPerson_header">Add new inspiring person</string>
+    <string name="newPerson_titleInputHint">Name</string>
+    <string name="newPerson_dateOfBirthInputHint">Date of birth</string>
+    <string name="newPerson_descriptionInputHint">Description</string>
+    <string name="newPerson_quotesInputHint">Write quotes with dot separating them</string>
+    <string name="newPerson_saveBtn">Save</string>
+    <string name="newPerson_imageUrlInputHint">Image URL</string>
 </resources>

@@ -38,4 +38,7 @@ object PeopleRepository {
     fun remove(id: Int) = people.removeAll { person -> person.id == id }
     fun get(id: Int): InspiringPerson? = people.find { person -> person.id == id }
     fun add(person: InspiringPerson) = people.add(person)
+    fun generateId(): Int {
+        return people.size + 1
+    }
 }

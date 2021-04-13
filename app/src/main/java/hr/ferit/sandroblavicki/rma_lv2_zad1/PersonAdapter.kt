@@ -6,12 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 class PersonAdapter(people: MutableList<InspiringPerson>,
 inspiringPersonListener: InspiringPersonInteractionListener): RecyclerView.Adapter<InspiringPersonHolder>() {
-    private val people: MutableList<InspiringPerson>
-    private val inspiringPersonListener: InspiringPersonInteractionListener
+    private val people: MutableList<InspiringPerson> = mutableListOf()
+    private val inspiringPersonListener: InspiringPersonInteractionListener = inspiringPersonListener
     init {
-        this.people = mutableListOf()
-        this.people.addAll(people)
-        this.inspiringPersonListener = inspiringPersonListener
+        refreshData(people)
     }
 
     fun refreshData(people: MutableList<InspiringPerson>){
@@ -22,8 +20,7 @@ inspiringPersonListener: InspiringPersonInteractionListener): RecyclerView.Adapt
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InspiringPersonHolder {
         val personView = LayoutInflater.from(parent.context).inflate(R.layout.item_person, parent, false)
-        val personHolder = InspiringPersonHolder(personView)
-        return personHolder
+        return InspiringPersonHolder(personView)
     }
 
     override fun getItemCount(): Int = people.size
@@ -32,6 +29,4 @@ inspiringPersonListener: InspiringPersonInteractionListener): RecyclerView.Adapt
         val person = people[position]
         holder.bind(person, inspiringPersonListener)
     }
-
-
 }
