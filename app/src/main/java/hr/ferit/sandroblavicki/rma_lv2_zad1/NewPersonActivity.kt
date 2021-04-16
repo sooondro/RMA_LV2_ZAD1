@@ -3,11 +3,13 @@ package hr.ferit.sandroblavicki.rma_lv2_zad1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.RecyclerView
 import hr.ferit.sandroblavicki.rma_lv2_zad1.databinding.ActivityNewPersonBinding
 
 class NewPersonActivity : AppCompatActivity() {
 
     private lateinit var newPersonBinding: ActivityNewPersonBinding
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,8 +28,9 @@ class NewPersonActivity : AppCompatActivity() {
 
         val id = PeopleRepository.generateId()
         val newPerson = quotes?.let { InspiringPerson(id, name, dateOfBirth, it, description, imageUrl) }
-        Log.d("SANDRO", newPerson.toString())
         newPerson?.let { PeopleRepository.add(it) }
+        Log.d("SANDRO", newPerson.toString())
+
         finish()
     }
 }

@@ -5,9 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 class PersonAdapter(people: MutableList<InspiringPerson>,
-inspiringPersonListener: InspiringPersonInteractionListener): RecyclerView.Adapter<InspiringPersonHolder>() {
+private val inspiringPersonListener: InspiringPersonInteractionListener): RecyclerView.Adapter<InspiringPersonHolder>() {
+
     private val people: MutableList<InspiringPerson> = mutableListOf()
-    private val inspiringPersonListener: InspiringPersonInteractionListener = inspiringPersonListener
+
     init {
         refreshData(people)
     }
@@ -15,7 +16,7 @@ inspiringPersonListener: InspiringPersonInteractionListener): RecyclerView.Adapt
     fun refreshData(people: MutableList<InspiringPerson>){
         this.people.clear()
         this.people.addAll(people)
-        this.notifyDataSetChanged()
+        notifyItemInserted(itemCount-1)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InspiringPersonHolder {

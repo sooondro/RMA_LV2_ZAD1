@@ -24,6 +24,11 @@ class MainActivity : AppCompatActivity() {
         setUpUi()
     }
 
+    override fun onResume() {
+        super.onResume()
+        (peopleDisplay.adapter as PersonAdapter).refreshData(PeopleRepository.people)
+    }
+
     private fun createNewPerson() {
         val newPersonIntent = Intent(this, NewPersonActivity::class.java)
         startActivity(newPersonIntent)

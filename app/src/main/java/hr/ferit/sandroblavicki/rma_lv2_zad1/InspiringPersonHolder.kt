@@ -1,6 +1,8 @@
 package hr.ferit.sandroblavicki.rma_lv2_zad1
 
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
